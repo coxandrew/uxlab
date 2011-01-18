@@ -1,5 +1,9 @@
 # UX Lab
 
+## Overview
+
+UX Lab is a free resource manager for storing and sharing design images and documents for a project. 
+
 ## Data Model
 
 users
