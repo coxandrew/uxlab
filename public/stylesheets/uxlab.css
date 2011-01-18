@@ -1,0 +1,94 @@
+/* =colors
+   --------------------------------------------------------------- **
+** #003366 - link color
+** #888888 - link visited
+** --------------------------------------------------------------- */
+
+/* =toc
+** --------------------------------------------------------------- **
+** general
+** --------------------------------------------------------------- */
+
+/* =general
+------------------------------------------------------------------ */
+a:link,
+a:hover,
+a:active {
+  color: #036;
+}
+a:visited {
+  color: #888;
+}
+body {
+  background: #fff;
+  color: #333;
+  font-family: Helvetica, Arial, sans-serif;
+}
+h1 {font-size: 180%}
+h2 {font-size: 160%}
+h3 {font-size: 140%}
+h4 {font-size: 120%}
+h5 {font-size: 100%}
+p {
+  margin: 1em 0;
+}
+p#notice, p#info,
+p#alert, p#error {
+  border: 2px solid #66CC66;
+  padding: 5px 10px;
+  line-height: 1.4;
+}
+p#notice {
+  border-color: #66CC66;
+  background-color: #CCFFCC;
+  margin: 0 0 1em;
+}
+p#alert, p#error{
+  border-color: #c00;
+  background-color: #FFDFDF;
+}
+p#info {
+  border: 2px solid #006EB3;
+  background-color: #EFF9FF;
+}
+#main ul,
+#main ol {
+  margin: 1em 1em 1em 2em;
+}
+#main li {
+  margin: 0.5em 0;
+}
+
+/* =header
+------------------------------------------------------------------ */
+#header {
+  background: #555;
+  padding: 10px 20px;
+  border-bottom: 2px solid #000;
+}
+#header h1 {
+  font-size: 180%;
+}
+#header h1 a:link,
+#header h1 a:visited,
+#header h1 a:hover,
+#header h1 a:active {
+  color: #fff;
+  text-decoration: none;
+}
+
+/* =main
+------------------------------------------------------------------ */
+#main {
+  padding: 20px;
+}
+#main h2 {
+  color: #555;
+  font-weight: normal;
+  border-bottom: 1px solid #ccc;
+}
+
+ul#projects {
+  list-style-type: none;
+  margin-left: 0;
+}

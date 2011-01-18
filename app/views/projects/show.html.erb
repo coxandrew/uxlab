@@ -1,17 +1,21 @@
-<p id="notice"><%= notice %></p>
+<h2><%= @project.name %></h2>
 
-<p>
-  <b>Name:</b>
-  <%= @project.name %>
-</p>
-
-<p>
-  <b>Description:</b>
+<p class="description">
   <%= @project.description %>
 </p>
 
+<% if @project.flows.length > 0 %>
+<h3>User Flows</h3>
+
+<ul id="user_flows">
+  <%= render @project.flows %>
+</ul>
+<% end %>
+
+
+
 <p>
-  <%= link_to "Add flow", new_project_flow_path(@project.id) %>
+  <%= link_to "Add user flow", new_project_flow_path(@project.id) %>
 </p>
 
 <%= link_to 'Edit', edit_project_path(@project) %> |

@@ -2,7 +2,7 @@
 
 ## Overview
 
-UX Lab is a free resource manager for storing and sharing design images and documents for a project. 
+UX Lab is a free resource manager for storing and sharing design images and documents for a project.
 
 ## Data Model
 
@@ -46,21 +46,24 @@ images
 
 * Create projects
 * Push to github
+* CSS Reset
+* Basic styling
 * Create user flows for a project
 * Upload images directly to a user flow (paperclip)
-* CSS Reset + 960gs
-
 
 ### Checkpoint #2
 
 * Swap in jQuery
-* Nice paging through of user flow w/ jQuery UI
+* Nice paging through of flow w/ jQuery UI
+* Sortable images in a flow
 * Select images from library to add to user flows
 * Tag images
-* Multiple versions of flows (e.g. sketch, wireframe, mockup)
+* Image button links
+* Ajax adding of projects
 
 ### Final Checkpoint
 
+* Multiple versions of flows (e.g. sketch, wireframe, mockup)
 * User roles (owner, member, viewer for each project)
 * Inception artifacts:
   * Mission statement
