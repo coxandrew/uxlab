@@ -41,11 +41,15 @@ images
 ### Checkpoint #1
 
 * Create projects
-* Create user flows
+* Push to github
+* Create user flows for a project
 * Upload images directly to a user flow (paperclip)
+* CSS Reset + 960gs
+
 
 ### Checkpoint #2
 
+* Swap in jQuery
 * Nice paging through of user flow w/ jQuery UI
 * Select images from library to add to user flows
 * Tag images

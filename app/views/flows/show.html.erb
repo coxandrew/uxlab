@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @flow.name %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%= @flow.description %>
+</p>
+
+
+<%= link_to 'Edit', edit_project_flow_path(@flow.project, @flow) %> |
+<%= link_to 'Back', projects_path %>

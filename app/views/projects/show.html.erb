@@ -10,6 +10,9 @@
   <%= @project.description %>
 </p>
 
+<p>
+  <%= link_to "Add flow", new_project_flow_path(@project.id) %>
+</p>
 
 <%= link_to 'Edit', edit_project_path(@project) %> |
 <%= link_to 'Back', projects_path %>

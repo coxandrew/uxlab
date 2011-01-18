@@ -1,5 +1,9 @@
 Uxlab::Application.routes.draw do
-  resources :projects
+  resources :projects do
+    resources :flows
+  end
+
+  root :to => "projects#index"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
