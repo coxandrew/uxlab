@@ -29,16 +29,17 @@ projects
 
 flows
   belongs_to :project
-  has_many :images
+  has_many :screens
 
   name
   description
 
-images
-  has_many :tags
+screens
+  belongs_to :flow
 
   name
   caption
+  flow_id
 
 ## TODO
 
