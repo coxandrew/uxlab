@@ -1,6 +1,8 @@
 Uxlab::Application.routes.draw do
   resources :projects do
-    resources :flows
+    resources :flows do
+      resources :screens
+    end
   end
 
   root :to => "projects#index"

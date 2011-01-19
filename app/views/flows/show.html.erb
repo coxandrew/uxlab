@@ -8,3 +8,15 @@
 <p class="description">
   <%= @flow.description %>
 </p>
+
+<% if @flow.screens.length > 0 %>
+  <ul class="screens">
+  <% for screen in @flow.screens %>
+    <li>
+      <%= image_tag screen.image.url %>
+    </li>
+  <% end %>
+  </ul>
+<% end %>
+
+<%= link_to "Add new screen", new_project_flow_screen_path(@flow.project, @flow) %>
