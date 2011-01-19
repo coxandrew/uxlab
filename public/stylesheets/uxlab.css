@@ -7,6 +7,10 @@
 /* =toc
 ** --------------------------------------------------------------- **
 ** general
+** header
+** main
+** projects
+** forms
 ** --------------------------------------------------------------- */
 
 /* =general
@@ -87,8 +91,46 @@ p#info {
   font-weight: normal;
   border-bottom: 1px solid #ccc;
 }
+#main h3,
+#main h4 {
+  margin: 1em 0;
+}
+h2 a:link,
+h2 a:visited,
+h2 a:hover,
+h2 a:active {
+  color: #333;
+  text-decoration: none;
+}
+h2 a:hover {
+  color: #036;
+}
 
+/* =projects
+------------------------------------------------------------------ */
 ul#projects {
   list-style-type: none;
   margin-left: 0;
+}
+.project_controls {
+  float: right;
+  line-height: 1.6;
+}
+
+/* =forms
+------------------------------------------------------------------ */
+.field {
+  margin: 1em 0;
+}
+a.inline_edit:link,
+a.inline_edit:visited,
+a.inline_edit:hover,
+a.inline_edit:active {
+  font-size: 70%;
+  font-weight: normal;
+  font-style: italic;
+  color: #888;
+}
+a.inline_edit:hover {
+  color: #036;
 }

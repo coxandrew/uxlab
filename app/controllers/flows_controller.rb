@@ -1,17 +1,6 @@
 require 'ap'
 
 class FlowsController < ApplicationController
-  # GET /flows
-  # GET /flows.xml
-  def index
-    @flows = Flow.all
-
-    respond_to do |format|
-      format.html # index.html.erb
-      format.xml  { render :xml => @flows }
-    end
-  end
-
   # GET /flows/1
   # GET /flows/1.xml
   def show
@@ -38,6 +27,7 @@ class FlowsController < ApplicationController
   # GET /flows/1/edit
   def edit
     @flow = Flow.find(params[:id])
+    @project = @flow.project
   end
 
   # POST /flows
@@ -48,7 +38,7 @@ class FlowsController < ApplicationController
     respond_to do |format|
       if @flow.save
         ap @flow
-        format.html { redirect_to(project_flow_path(@flow.project.id, @flow), :notice => 'Flow was successfully created.') }
+        format.html { redirect_to(project_path(@flow.project), :notice => 'Flow was successfully created.') }
         format.xml  { render :xml => @flow, :status => :created, :location => @flow }
       else
         format.html { render :action => "new" }
@@ -64,7 +54,7 @@ class FlowsController < ApplicationController
 
     respond_to do |format|
       if @flow.update_attributes(params[:flow])
-        format.html { redirect_to(@flow, :notice => 'Flow was successfully updated.') }
+        format.html { redirect_to(@flow.project, :notice => 'Flow was successfully updated.') }
         format.xml  { head :ok }
       else
         format.html { render :action => "edit" }

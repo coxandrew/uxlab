@@ -1,15 +1,10 @@
-<p id="notice"><%= notice %></p>
+<h2><%= link_to @flow.project.name, @flow.project %></h2>
 
-<p>
-  <b>Name:</b>
+<h3>
   <%= @flow.name %>
-</p>
+  <%= link_to '(Edit)', edit_project_flow_path(@flow.project, @flow), :class => "inline_edit" %>
+</h3>
 
-<p>
-  <b>Description:</b>
+<p class="description">
   <%= @flow.description %>
 </p>
-
-
-<%= link_to 'Edit', edit_project_flow_path(@flow.project, @flow) %> |
-<%= link_to 'Back', projects_path %>

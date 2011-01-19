@@ -53,16 +53,16 @@ images
 
 ### Checkpoint #2
 
-* Swap in jQuery
+* Add jQuery
 * Nice paging through of flow w/ jQuery UI
 * Sortable images in a flow
-* Select images from library to add to user flows
-* Tag images
+* Select images from library to add to user flows (e.g. re-use the 'login' screen for many flows)
 * Image button links
-* Ajax adding of projects
+* Comments on flows and/or images
 
 ### Final Checkpoint
 
+* Ajax adding of projects
 * Multiple versions of flows (e.g. sketch, wireframe, mockup)
 * User roles (owner, member, viewer for each project)
 * Inception artifacts:

@@ -1,3 +1,7 @@
+<div class="project_controls">
+  <%= link_to 'Edit', edit_project_path(@project) %>
+</div>
+
 <h2><%= @project.name %></h2>
 
 <p class="description">
@@ -12,11 +16,6 @@
 </ul>
 <% end %>
 
-
-
 <p>
   <%= link_to "Add user flow", new_project_flow_path(@project.id) %>
 </p>
-
-<%= link_to 'Edit', edit_project_path(@project) %> |
-<%= link_to 'Back', projects_path %>
