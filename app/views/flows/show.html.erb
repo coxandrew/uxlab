@@ -9,13 +9,9 @@
   <%= @flow.description %>
 </p>
 
-<% if @flow.screens.length > 0 %>
+<% if @flow.screens.any? %>
   <ul class="screens">
-  <% for screen in @flow.screens %>
-    <li>
-      <%= image_tag screen.image.url %>
-    </li>
-  <% end %>
+    <%= render @flow.screens %>
   </ul>
 <% end %>
 

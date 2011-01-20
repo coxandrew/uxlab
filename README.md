@@ -52,10 +52,19 @@ x * Basic styling
 x * Create user flows for a project
 x * Upload images directly to a user flow (paperclip)
 
+#### Feedback
+
+* Don't use for loops: https://github.com/sudrew/uxlab/blob/master/app/views/flows/show.html.erb#L14
+* Use `unless @project.flows.empty?` or `if @project.flows.any?` instead of `if @project.flows.length > 0`
+
 ### Checkpoint #2
 
 * Thumbnail images w/ ImageMagick
+* Breadcrumb navigation
+* User roles (owner, member, viewer for each project)
+* Testing
 * Delete Projects, flows & screens
+* Consistent delete/edit link locations
 * Nice paging through of flow w/ jQuery UI lightbox
 * Sortable images in a flow
 * Make screens re-usable across multiple flows (e.g. re-use the 'login' screen for many flows)
@@ -66,7 +75,6 @@ x * Upload images directly to a user flow (paperclip)
 ### Final Checkpoint
 
 * Comments on flows and/or images
-* User roles (owner, member, viewer for each project)
 * Inception artifacts:
   * Mission statement
   * Target audience

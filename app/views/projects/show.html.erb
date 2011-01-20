@@ -8,12 +8,12 @@
   <%= @project.description %>
 </p>
 
-<% if @project.flows.length > 0 %>
-<h3>User Flows</h3>
+<% if @project.flows.any? %>
+  <h3>User Flows</h3>
 
-<ul id="user_flows">
-  <%= render @project.flows %>
-</ul>
+  <ul id="user_flows">
+    <%= render @project.flows %>
+  </ul>
 <% end %>
 
 <p>
