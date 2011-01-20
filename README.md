@@ -54,13 +54,17 @@ x * Upload images directly to a user flow (paperclip)
 
 #### Feedback
 
-* Don't use for loops: https://github.com/sudrew/uxlab/blob/master/app/views/flows/show.html.erb#L14
-* Use `unless @project.flows.empty?` or `if @project.flows.any?` instead of `if @project.flows.length > 0`
+x * Don't use for loops: https://github.com/sudrew/uxlab/blob/master/app/views/flows/show.html.erb#L14
+x * Use `unless @project.flows.empty?` or `if @project.flows.any?` instead of `if @project.flows.length > 0`
 
 ### Checkpoint #2
 
-* Thumbnail images w/ ImageMagick
-* Breadcrumb navigation
+x * Thumbnail images w/ ImageMagick
+x * Make screen thumbnails nicer
+* Make nice, common error message partial
+* Set up Amazon S3
+* Deploy to Heroku
+* Consistent navigation (sidebar, breadcrumbs)
 * User roles (owner, member, viewer for each project)
 * Testing
 * Delete Projects, flows & screens

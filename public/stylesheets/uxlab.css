@@ -120,20 +120,18 @@ p.description {
   margin-top: 0.5em;
 }
 
-/* =forms
+/* =screens
 ------------------------------------------------------------------ */
-.field {
-  margin: 1em 0;
+#main ul.screens {
+  list-style-type: none;
+  margin-left: 0;
 }
-a.inline_edit:link,
-a.inline_edit:visited,
-a.inline_edit:hover,
-a.inline_edit:active {
-  font-size: 70%;
-  font-weight: normal;
-  font-style: italic;
-  color: #888;
+ul.screens li {
+  float: left;
 }
-a.inline_edit:hover {
-  color: #036;
+ul.screens li img {
+  padding: 3px;
+  background: #fff;
+  border: 1px solid #ccc;
+  margin: 5px;
 }

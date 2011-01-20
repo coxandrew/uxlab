@@ -10,9 +10,13 @@
 </p>
 
 <% if @flow.screens.any? %>
-  <ul class="screens">
+  <ul class="screens clearfix">
     <%= render @flow.screens %>
   </ul>
 <% end %>
 
-<%= link_to "Add new screen", new_project_flow_screen_path(@flow.project, @flow) %>
+<div class="actions">
+<%= link_to "Add new screen",
+  new_project_flow_screen_path(@flow.project, @flow)
+ %>
+</div>

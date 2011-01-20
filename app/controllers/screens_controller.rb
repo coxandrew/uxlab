@@ -14,6 +14,8 @@ class ScreensController < ApplicationController
   # POST /projects.xml
   def create
     @screen = Screen.new(params[:screen])
+    @flow = @screen.flow
+    @project = @flow.project
 
     if @screen.save
       redirect_to([@screen.flow.project, @screen.flow], :notice => 'Screen was successfully created.')
