@@ -1,0 +1,11 @@
+<% if object.errors.any? %>
+  <div id="error_explanation">
+    <h4><%= pluralize(object.errors.count, "error") %> prohibited this <%= object.friendly_name %> from being saved:</h3>
+
+    <ul class="error_messages">
+    <% object.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+    </ul>
+  </div>
+<% end %>

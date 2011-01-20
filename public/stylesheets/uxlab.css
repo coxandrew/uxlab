@@ -106,6 +106,41 @@ h2 a:hover {
   color: #036;
 }
 
+/* =forms
+------------------------------------------------------------------ */
+.field {
+  margin: 1em 0;
+}
+a.inline_edit:link,
+a.inline_edit:visited,
+a.inline_edit:hover,
+a.inline_edit:active {
+  font-size: 70%;
+  font-weight: normal;
+  font-style: italic;
+  color: #888;
+}
+a.inline_edit:hover {
+  color: #036;
+}
+.actions {
+  clear: both;
+  margin-top: 1em;
+}
+#error_explanation {
+  width: 600px;
+  border: 2px solid #c00;
+  margin: 0.5em 0;
+}
+#error_explanation h4 {
+  font-size: 100%;
+  font-weight: normal;
+  margin: 0;
+  padding: 0.4em 0.5em 0.2em;
+  border-bottom: 1px solid #c00;
+  background: #FFDFDF;
+}
+
 /* =projects
 ------------------------------------------------------------------ */
 ul#projects {

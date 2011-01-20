@@ -1,4 +1,8 @@
-<% form_for([@project, @flow, @screen], :html => { :multipart => true }) do |f| %>
+<% form_for([@project, @flow, @screen],
+  :html => { :multipart => true }) do |f| %>
+  <%= render :partial => "shared/form_errors",
+    :locals => { :object => @screen } %>
+
   <%= f.hidden_field :flow_id %>
 
   <div class="field">
