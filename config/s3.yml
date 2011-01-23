@@ -1,0 +1,11 @@
+development: &defaults
+  bucket: uxlab_development
+  access_key_id: AKIAJJD6AD342HNUOXBQ
+  secret_access_key: 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
+
+test:
+  <<: *defaults
+
+production:
+  <<: *defaults
+  bucket: uxlab_production

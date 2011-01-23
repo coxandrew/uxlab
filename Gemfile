@@ -21,6 +21,7 @@ group :development do
   gem 'interactive_editor'
   gem 'heroku'
   gem 'taps'
+  gem 'aws-s3'
 end
 
 # Use unicorn as the web server

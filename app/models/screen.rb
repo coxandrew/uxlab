@@ -1,6 +1,10 @@
 class Screen < ActiveRecord::Base
   belongs_to :flow
-  has_attached_file :image, :styles => { :thumb => "100x100#" }
+  has_attached_file :image,
+    :styles => { :thumb => "100x100#" },
+    :storage => :s3,
+    :path => ":attachment/:id/:style/:basename.:extension",
+    :s3_credentials => "#{RAILS_ROOT}/config/s3.yml"
 
   validates_attachment_presence :image
 
