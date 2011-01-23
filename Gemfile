@@ -10,6 +10,10 @@ gem "paperclip", "~> 2.3"
 
 group :development do
   gem "awesome_print", :require => "ap"
+  gem "wirble"
+  gem "hirb"
+  gem "interactive_editor"
+  gem "heroku"
 end
 
 # Use unicorn as the web server
