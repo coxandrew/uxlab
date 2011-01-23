@@ -1,2 +1,5 @@
-// Place your application-specific JavaScript functions and classes here
-// This file is automatically included by javascript_include_tag :defaults
+log = function(string) { if (window.console) console.log(string) }
+
+$(document).ready(function() {
+  $('input.first_input').focus();
+});
