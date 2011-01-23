@@ -20,6 +20,7 @@ group :development do
   gem 'hirb'
   gem 'interactive_editor'
   gem 'heroku'
+  gem 'taps'
 end
 
 # Use unicorn as the web server
