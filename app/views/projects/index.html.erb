@@ -4,6 +4,10 @@
   <ul id="projects">
     <%= render @projects %>
   </ul>
+<% else %>
+  <p>
+    You have no projects.
+  </p>
 <% end %>
 
 <%= link_to 'New Project', new_project_path %>
