@@ -1,19 +1,24 @@
 source 'http://rubygems.org'
 
 gem 'rails', '3.0.3'
+gem 'paperclip', '~> 2.3'
+gem 'bcrypt-ruby', :require => 'bcrypt'
 
-# Bundle edge Rails instead:
-# gem 'rails', :git => 'git://github.com/rails/rails.git'
+group :development, :test do
+  gem 'sqlite3-ruby', :require => 'sqlite3'
+  gem 'awesome_print', :require => 'ap'
+end
 
-gem 'sqlite3-ruby', :require => 'sqlite3'
-gem "paperclip", "~> 2.3"
+group :test do
+  gem 'rspec-rails'
+  gem 'spork'
+end
 
 group :development do
-  gem "awesome_print", :require => "ap"
-  gem "wirble"
-  gem "hirb"
-  gem "interactive_editor"
-  gem "heroku"
+  gem 'wirble'
+  gem 'hirb'
+  gem 'interactive_editor'
+  gem 'heroku'
 end
 
 # Use unicorn as the web server
