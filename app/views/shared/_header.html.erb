@@ -1,3 +1,8 @@
 <div id="header">
   <h1><%= link_to "UX Lab", root_path %></h1>
+
+  <div id="header_links">
+    <%= "Hello, #{current_user.username}!" %>
+    <%= link_to "(log out)", sessions_destroy_path %>
+  </div>
 </div>

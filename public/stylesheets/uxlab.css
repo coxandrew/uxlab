@@ -9,8 +9,10 @@
 ** general
 ** header
 ** main
-** projects
 ** forms
+** login
+** projects
+** screens
 ** --------------------------------------------------------------- */
 
 /* =general
@@ -80,6 +82,24 @@ p#info {
   color: #fff;
   text-decoration: none;
 }
+#header_links {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  line-height: 200%;
+  color: #fff;
+}
+#header_links a:link,
+#header_links a:visited,
+#header_links a:hover,
+#header_links a:active {
+  color: #ddd;
+  font-style: italic;
+  font-size: 90%;
+}
+#header_links a:hover {
+  text-decoration: none;
+}
 
 /* =main
 ------------------------------------------------------------------ */
@@ -139,6 +159,45 @@ a.inline_edit:hover {
   padding: 0.4em 0.5em 0.2em;
   border-bottom: 1px solid #c00;
   background: #FFDFDF;
+}
+
+/* =login
+------------------------------------------------------------------ */
+body.sessions {
+  background: #eee;
+}
+#login {
+  width: 400px;
+  margin: auto;
+}
+#login h2 {
+  border-bottom: 0;
+  font-size: 140%;
+  text-align: center;
+  margin-top: 80px;
+  margin-bottom: 0.5em;
+}
+#login form {
+  background: #fff;
+  border: 1px solid #ccc;
+  padding: 2em 2em 1em;
+}
+#login label {
+  color: #888;
+  font-size: 90%;
+  font-style: italic;
+}
+#login input {
+  width: 100%;
+  font-size: 140%;
+  color: #555;
+}
+#login .actions input {
+  color: #000;
+  width: auto;
+}
+#login p {
+  margin: 0 0 1em;
 }
 
 /* =projects

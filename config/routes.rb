@@ -1,4 +1,9 @@
 Uxlab::Application.routes.draw do
+  get "sessions/new"
+  get "sessions/create"
+  get "sessions/destroy"
+
+  resources :sessions
   resources :projects do
     resources :flows do
       resources :screens
