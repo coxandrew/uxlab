@@ -1,15 +1,5 @@
-<div class="project_controls">
-  <%= link_to 'Edit', edit_project_path(@project) %>
-</div>
-
-<h2><%= @project.name %></h2>
-
-<p class="description">
-  <%= @project.description %>
-</p>
-
 <% if @project.features.any? %>
-  <h3>Features</h3>
+  <h2>Features</h2>
 
   <ul id="features">
     <%= render @project.features %>

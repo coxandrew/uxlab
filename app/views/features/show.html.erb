@@ -1,9 +1,7 @@
-<h2><%= link_to @project.name, @feature.project %></h2>
-
-<h3>
+<h2>
   <%= @feature.name %>
   <%= link_to '(Edit)', edit_project_feature_path(@project, @feature), :class => "inline_edit" %>
-</h3>
+</h2>
 
 <p class="description">
   <%= @feature.description %>

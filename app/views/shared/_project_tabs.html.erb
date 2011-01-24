@@ -1,0 +1,7 @@
+<% if user_projects.any? && current_project %>
+<ul id="project_tabs" class="clearfix">
+  <%= render :partial => "shared/project_tab",
+    :collection => user_projects,
+    :as => :project %>
+</ul>
+<% end %>

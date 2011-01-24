@@ -1,14 +1,10 @@
 class ScreensController < ApplicationController
-  before_filter :get_project, :only => [:new, :show, :create]
-  before_filter :get_feature, :only => [:new, :show, :create]
+  before_filter :get_project, :only => [:new, :create]
+  before_filter :get_feature, :only => [:new, :create]
 
   def new
     @flow = Flow.find(params[:flow_id])
     @screen = @flow.screens.build
-  end
-
-  def show
-    @flow = Flow.find(params[:flow_id])
   end
 
   # POST /projects

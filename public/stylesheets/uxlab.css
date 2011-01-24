@@ -110,6 +110,7 @@ p#info {
   color: #555;
   font-weight: normal;
   border-bottom: 1px solid #ccc;
+  margin-top: 0;
 }
 #main h3,
 #main h4 {
@@ -217,6 +218,38 @@ ul#projects {
 }
 p.description {
   margin-top: 0.5em;
+}
+ul#project_tabs {
+  list-style-type: none;
+  margin: 16px 0 0;
+  padding-left: 16px;
+  border-bottom: 1px solid #aaa;
+}
+ul#project_tabs li {
+  float: left;
+  margin: 0;
+}
+ul#project_tabs li span,
+ul#project_tabs li a {
+  display: block;
+  padding: 6px 16px 4px;
+  margin: 0 3px -1px;
+  background: #fff;
+}
+ul#project_tabs li span {
+  border: 1px solid #aaa;
+  border-width: 1px 1px 0;
+}
+ul#project_tabs li a:link,
+ul#project_tabs li a:visited,
+ul#project_tabs li a:hover,
+ul#project_tabs li a:active {
+  text-decoration: none;
+  color: #555;
+}
+ul#project_tabs li a:hover {
+  background: #888;
+  color: #fff;
 }
 
 /* =screens

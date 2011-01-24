@@ -1,0 +1,9 @@
+<li>
+  <% if current_project == project %>
+    <span class="current">
+      <%= project.name %>
+    </span>
+  <% else %>
+    <%= link_to project.name, project %>
+  <% end %>
+</li>
