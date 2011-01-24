@@ -1,33 +1,24 @@
 require 'ap'
 
 class FlowsController < ApplicationController
+  before_filter :get_project, :only => [:show, :new, :create, :edit]
+  before_filter :get_feature, :only => [:show, :new, :create, :edit]
+
   # GET /flows/1
   # GET /flows/1.xml
   def show
     @flow = Flow.find(params[:id])
-
-    respond_to do |format|
-      format.html # show.html.erb
-      format.xml  { render :xml => @flow }
-    end
   end
 
   # GET /flows/new
   # GET /flows/new.xml
   def new
-    @project = Project.find(params[:project_id])
-    @flow = @project.flows.build
-
-    respond_to do |format|
-      format.html # new.html.erb
-      format.xml  { render :xml => @flow }
-    end
+    @flow = @feature.flows.build
   end
 
   # GET /flows/1/edit
   def edit
     @flow = Flow.find(params[:id])
-    @project = @flow.project
   end
 
   # POST /flows
@@ -35,15 +26,10 @@ class FlowsController < ApplicationController
   def create
     @flow = Flow.new(params[:flow])
 
-    respond_to do |format|
-      if @flow.save
-        ap @flow
-        format.html { redirect_to(project_path(@flow.project), :notice => 'Flow was successfully created.') }
-        format.xml  { render :xml => @flow, :status => :created, :location => @flow }
-      else
-        format.html { render :action => "new" }
-        format.xml  { render :xml => @flow.errors, :status => :unprocessable_entity }
-      end
+    if @flow.save
+      redirect_to([@project, @feature], :notice => 'Flow was successfully created.')
+    else
+      render :action => "new"
     end
   end
 
@@ -73,5 +59,15 @@ class FlowsController < ApplicationController
       format.html { redirect_to(flows_url) }
       format.xml  { head :ok }
     end
+  end
+
+  private
+
+  def get_project
+    @project = Project.find(params[:project_id])
+  end
+
+  def get_feature
+    @feature = Feature.find(params[:feature_id])
   end
 end

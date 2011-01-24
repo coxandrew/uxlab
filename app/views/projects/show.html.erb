@@ -8,14 +8,14 @@
   <%= @project.description %>
 </p>
 
-<% if @project.flows.any? %>
-  <h3>User Flows</h3>
+<% if @project.features.any? %>
+  <h3>Features</h3>
 
-  <ul id="user_flows">
-    <%= render @project.flows %>
+  <ul id="features">
+    <%= render @project.features %>
   </ul>
 <% end %>
 
 <p>
-  <%= link_to "Add user flow", new_project_flow_path(@project.id) %>
+  <%= link_to "Add feature", new_project_feature_path(@project.id) %>
 </p>

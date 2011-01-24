@@ -5,3 +5,9 @@
 #
 #   cities = City.create([{ :name => 'Chicago' }, { :name => 'Copenhagen' }])
 #   Mayor.create(:name => 'Daley', :city => cities.first)
+
+user_defaults = { :password => 'tronguy', :password_confirmation => 'tronguy' }
+users = ['cox', 'jordanbyron', 'seacreature']
+users.each do |user|
+  User.create(user_defaults.merge(:username => user))
+end

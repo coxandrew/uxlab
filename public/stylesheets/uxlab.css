@@ -160,6 +160,11 @@ a.inline_edit:hover {
   border-bottom: 1px solid #c00;
   background: #FFDFDF;
 }
+.field_with_errors {
+  display: inline;
+  font-weight: bold;
+  color: #c00;
+}
 
 /* =login
 ------------------------------------------------------------------ */

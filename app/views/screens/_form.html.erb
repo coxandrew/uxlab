@@ -1,5 +1,6 @@
-<% form_for([@project, @flow, @screen],
+<% form_for([@project, @feature, @flow, @screen],
   :html => { :multipart => true }) do |f| %>
+
   <%= render :partial => "shared/form_errors",
     :locals => { :object => @screen } %>
 
@@ -21,6 +22,6 @@
   </div>
 
   <div class="actions">
-    <%= f.submit %> | <%= link_to "Cancel", [@project, @flow] %>
+    <%= f.submit %> | <%= link_to "Cancel", [@project, @feature, @flow] %>
   </div>
 <% end %>

@@ -4,7 +4,7 @@ class Screen < ActiveRecord::Base
     :styles => { :thumb => "100x100#" },
     :storage => :s3,
     :path => ":attachment/:id/:style/:basename.:extension",
-    :s3_credentials => "#{RAILS_ROOT}/config/s3.yml"
+    :s3_credentials => "#{Rails.root.to_s}/config/s3.yml"
 
   validates_attachment_presence :image
 

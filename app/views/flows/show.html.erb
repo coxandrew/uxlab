@@ -1,9 +1,11 @@
-<h2><%= link_to @flow.project.name, @flow.project %></h2>
+<h2><%= link_to @project.name, @project %></h2>
 
-<h3>
+<h3><%= @feature.name %></h3>
+
+<h4>
   <%= @flow.name %>
-  <%= link_to '(Edit)', edit_project_flow_path(@flow.project, @flow), :class => "inline_edit" %>
-</h3>
+  <%= link_to '(Edit)', edit_project_feature_flow_path(@project, @feature, @flow), :class => "inline_edit" %>
+</h4>
 
 <p class="description">
   <%= @flow.description %>
@@ -17,6 +19,6 @@
 
 <div class="actions">
 <%= link_to "Add new screen",
-  new_project_flow_screen_path(@flow.project, @flow)
+  new_project_feature_flow_screen_path(@project, @feature, @flow)
  %>
 </div>

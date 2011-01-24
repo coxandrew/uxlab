@@ -1,8 +1,8 @@
-<%= form_for([@project, @feature, @flow]) do |f| %>
+<%= form_for([@project, @feature]) do |f| %>
   <%= render :partial => "shared/form_errors",
-    :locals => { :object => @flow } %>
+    :locals => { :object => @feature } %>
 
-  <%= f.hidden_field :feature_id %>
+  <%= f.hidden_field :project_id %>
 
   <div class="field">
     <%= f.label :name %><br />
@@ -12,7 +12,8 @@
     <%= f.label :description %><br />
     <%= f.text_area :description %>
   </div>
+
   <div class="actions">
-    <%= f.submit %> | <%= link_to "Cancel", [@project, @feature] %>
+    <%= f.submit %>| <%= link_to "Cancel", @project %>
   </div>
 <% end %>

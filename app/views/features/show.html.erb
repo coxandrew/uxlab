@@ -1,0 +1,24 @@
+<h2><%= link_to @project.name, @feature.project %></h2>
+
+<h3>
+  <%= @feature.name %>
+  <%= link_to '(Edit)', edit_project_feature_path(@project, @feature), :class => "inline_edit" %>
+</h3>
+
+<p class="description">
+  <%= @feature.description %>
+</p>
+
+<% if @feature.flows.any? %>
+  <h4>User Flows</h4>
+
+  <ul class="flows clearfix">
+    <%= render @feature.flows %>
+  </ul>
+<% end %>
+
+<div class="actions">
+<%= link_to "Add new user flow",
+  new_project_feature_flow_path(@project, @feature)
+ %>
+</div>

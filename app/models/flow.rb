@@ -1,4 +1,4 @@
 class Flow < ActiveRecord::Base
-  belongs_to :project
+  belongs_to :feature
   has_many :screens
 end
