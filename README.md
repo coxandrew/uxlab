@@ -6,40 +6,48 @@ UX Lab is a free resource manager for storing and sharing design images and docu
 
 ## Data Model
 
-users
-  has_many :projects, :through => :user_projects
+    user
+      has_many :projects, :through => :user_projects
 
-  username
-  password
-  password_confirmation
+      username
+      password
+      password_confirmation
 
-user_projects
-  belongs_to :user
-  belongs_to :project
+    user_projects
+      belongs_to :user
+      belongs_to :project
 
-  user_id
-  project_id
+      user_id
+      project_id
 
-projects
-  has_many :users, :through => :user_projects
-  has_many :flows
+    project
+      has_many :users, :through => :user_projects
+      has_many :features
 
-  name
-  description
+      name
+      description
 
-flows
-  belongs_to :project
-  has_many :screens
+    features
+      belongs_to :project
+      has_many :flows
 
-  name
-  description
+      name
+      description
 
-screens
-  belongs_to :flow
 
-  name
-  caption
-  flow_id
+    flow
+      belongs_to :feature
+      has_many :screens
+
+      name
+      description
+
+    screen
+      belongs_to :flow
+
+      name
+      caption
+      flow_id
 
 ## TODO
 
