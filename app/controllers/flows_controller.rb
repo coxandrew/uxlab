@@ -1,5 +1,3 @@
-require 'ap'
-
 class FlowsController < ApplicationController
   before_filter :get_project, :only => [:show, :new, :create, :update, :edit]
   before_filter :get_feature, :only => [:show, :new, :create, :update, :edit]
