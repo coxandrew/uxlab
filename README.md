@@ -75,6 +75,7 @@ x * Testing (RSpec)
 * Cucumber testing
 * Nice paging through of flow w/ jQuery UI lightbox
 * Sortable images in a flow
+* Sortable features in a project
 * Make screens re-usable across multiple flows (e.g. re-use the 'login' screen for many flows)
 * UI improvements:
   * Nice header

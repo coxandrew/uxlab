@@ -12,7 +12,8 @@ users.each do |user|
   User.create(user_defaults.merge(:username => user))
 end
 
-uni_web = Project.create(:name => "University Web")
+uni_web = Project.create(:name => "University Web",
+  :description => "School administration app for Ruby Mendicant University")
 admin_users = Feature.create(:name => "User Administration",
   :project_id => uni_web.id)
 admin_courses = Feature.create(:name => "Course Administration",
@@ -23,3 +24,5 @@ Flow.create(:name => "Add user to RMU",
 Flow.create(:name => "Add users to course",
   :feature_id => admin_courses.id)
 
+ux_lab = Project.create(:name => "UX Lab",
+  :description => "A resource manager for storing and sharing design images and documents for a project.")
