@@ -11,3 +11,13 @@ users = ['cox', 'jordanbyron', 'seacreature']
 users.each do |user|
   User.create(user_defaults.merge(:username => user))
 end
+
+uni_web = Project.create(:name => "University Web")
+admin_courses = Feature.create(:name => "Course Administration",
+  :project_id => uni_web.id)
+admin_users = Feature.create(:name => "User Administration",
+  :project_id => uni_web.id)
+
+add_users_to_course = Flow.create(:name => "Add users to course",
+  :feature_id => admin_courses.id)
+
