@@ -1,8 +1,8 @@
 require 'ap'
 
 class FlowsController < ApplicationController
-  before_filter :get_project, :only => [:show, :new, :create, :edit]
-  before_filter :get_feature, :only => [:show, :new, :create, :edit]
+  before_filter :get_project, :only => [:show, :new, :create, :update, :edit]
+  before_filter :get_feature, :only => [:show, :new, :create, :update, :edit]
 
   # GET /flows/1
   # GET /flows/1.xml
@@ -38,14 +38,10 @@ class FlowsController < ApplicationController
   def update
     @flow = Flow.find(params[:id])
 
-    respond_to do |format|
-      if @flow.update_attributes(params[:flow])
-        format.html { redirect_to(@flow.project, :notice => 'Flow was successfully updated.') }
-        format.xml  { head :ok }
-      else
-        format.html { render :action => "edit" }
-        format.xml  { render :xml => @flow.errors, :status => :unprocessable_entity }
-      end
+    if @flow.update_attributes(params[:flow])
+      redirect_to([@project, @feature], :notice => 'Flow was successfully updated.')
+    else
+      render :action => "edit"
     end
   end
 
@@ -55,10 +51,7 @@ class FlowsController < ApplicationController
     @flow = Flow.find(params[:id])
     @flow.destroy
 
-    respond_to do |format|
-      format.html { redirect_to(flows_url) }
-      format.xml  { head :ok }
-    end
+    redirect_to(flows_url)
   end
 
   private

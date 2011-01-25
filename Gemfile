@@ -3,6 +3,7 @@ source 'http://rubygems.org'
 gem 'rails', '3.0.3'
 gem 'paperclip', '~> 2.3'
 gem 'bcrypt-ruby', :require => 'bcrypt'
+gem 'jquery-rails', '>= 0.2.6'
 
 group :development, :test do
   gem 'sqlite3-ruby', :require => 'sqlite3'

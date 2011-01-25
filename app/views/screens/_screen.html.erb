@@ -1,3 +1,5 @@
 <li>
-  <%= image_tag screen.image.url(:thumb) %>
+  <%= link_to image_tag(screen.image.url(:thumb)), [@project, @feature, @flow, screen] %><br />
+  <%= link_to "Delete", [@project, @feature, @flow, screen], :method => :delete %>
+
 </li>

@@ -267,3 +267,9 @@ ul.screens li img {
   border: 1px solid #ccc;
   margin: 5px;
 }
+img.screen {
+  margin-top: 10px;
+  padding: 10px;
+  background: #ccc;
+  border: 3px solid #555;
+}

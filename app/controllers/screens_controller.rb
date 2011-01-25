@@ -1,10 +1,14 @@
 class ScreensController < ApplicationController
-  before_filter :get_project, :only => [:new, :create]
-  before_filter :get_feature, :only => [:new, :create]
+  before_filter :get_project, :only => [:new, :show, :destroy, :create]
+  before_filter :get_feature, :only => [:new, :show, :destroy, :create]
 
   def new
     @flow = Flow.find(params[:flow_id])
     @screen = @flow.screens.build
+  end
+
+  def show
+    @screen = Screen.find(params[:id])
   end
 
   # POST /projects
@@ -18,6 +22,14 @@ class ScreensController < ApplicationController
     else
       render :action => "new"
     end
+  end
+
+  def destroy
+    @screen = Screen.find(params[:id])
+    flow = @screen.flow
+    @screen.destroy
+
+    redirect_to([@project, @feature, flow])
   end
 
   private
