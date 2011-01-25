@@ -86,3 +86,17 @@ x * Make screen thumbnails nicer
   * Elevator pitch
 * Ajax adding of projects
 * Multiple versions of flows (e.g. sketch, wireframe, mockup)
+
+## Lessons Learned
+
+### Tell Heroku not to instal development and test gems
+
+    $ heroku config:add BUNDLE_WITHOUT="development:test"
+
+### Amazon S3
+
+### Paperclip
+
+### Rails 3 Tips
+
+    <%= link_to "Feature", [@project, @feature] %>
