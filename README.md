@@ -45,27 +45,27 @@ screens
 
 ### Checkpoint #1
 
-x * Create projects
-x * Push to github
-x * CSS Reset
-x * Basic styling
-x * Create user flows for a project
-x * Upload images directly to a user flow (paperclip)
+* <s>Create projects</s>
+* <s>Push to github</s>
+* <s>CSS Reset</s>
+* <s>Basic styling</s>
+* <s>Create user flows for a project</s>
+* <s>Upload images directly to a user flow (paperclip)</s>
 
 #### Feedback
 
-x * Don't use for loops: https://github.com/sudrew/uxlab/blob/master/app/views/flows/show.html.erb#L14
-x * Use `unless @project.flows.empty?` or `if @project.flows.any?` instead of `if @project.flows.length > 0`
+* <s>Don't use for loops</s>
+* <s>Use `unless @project.flows.empty?` or `if @project.flows.any?` instead of `if @project.flows.length > 0`</s>
 
 ### Checkpoint #2
 
-x * Thumbnail images w/ ImageMagick
-x * Make screen thumbnails nicer
-x * Make nice, common error message partial
-x * Set up Amazon S3
-x * Deploy to Heroku
-x * Authentication
-x * Testing (RSpec)
+* <s>Thumbnail images w/ ImageMagick</s>
+* <s>Make screen thumbnails nicer</s>
+* <s>Make nice, common error message partial</s>
+* <s>Set up Amazon S3</s>
+* <s>Deploy to Heroku</s>
+* <s>Authentication</s>
+* <s>Testing (RSpec)</s>
 * Consistent navigation (sidebar, breadcrumbs)
 * Delete Projects, flows & screens
 
