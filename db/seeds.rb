@@ -13,11 +13,13 @@ users.each do |user|
 end
 
 uni_web = Project.create(:name => "University Web")
-admin_courses = Feature.create(:name => "Course Administration",
-  :project_id => uni_web.id)
 admin_users = Feature.create(:name => "User Administration",
   :project_id => uni_web.id)
+admin_courses = Feature.create(:name => "Course Administration",
+  :project_id => uni_web.id)
 
-add_users_to_course = Flow.create(:name => "Add users to course",
+Flow.create(:name => "Add user to RMU",
+  :feature_id => admin_users.id)
+Flow.create(:name => "Add users to course",
   :feature_id => admin_courses.id)
 

@@ -61,30 +61,25 @@ x * Use `unless @project.flows.empty?` or `if @project.flows.any?` instead of `i
 
 x * Thumbnail images w/ ImageMagick
 x * Make screen thumbnails nicer
-* Make nice, common error message partial
-* Set up Amazon S3
-* Deploy to Heroku
+x * Make nice, common error message partial
+x * Set up Amazon S3
+x * Deploy to Heroku
+x * Authentication
+x * Testing (RSpec)
 * Consistent navigation (sidebar, breadcrumbs)
-* User roles (owner, member, viewer for each project)
-* Testing
 * Delete Projects, flows & screens
-* Consistent delete/edit link locations
+
+### Final Checkpoint
+
+* User roles (owner, member, viewer for each project)
+* Cucumber testing
 * Nice paging through of flow w/ jQuery UI lightbox
 * Sortable images in a flow
 * Make screens re-usable across multiple flows (e.g. re-use the 'login' screen for many flows)
 * UI improvements:
   * Nice header
   * Image button links
-
-### Final Checkpoint
-
 * Comments on flows and/or images
-* Inception artifacts:
-  * Mission statement
-  * Target audience
-  * Scoping list (in/out/undecided)
-  * Elevator pitch
-* Ajax adding of projects
 * Multiple versions of flows (e.g. sketch, wireframe, mockup)
 
 ## Lessons Learned
