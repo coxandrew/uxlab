@@ -4,6 +4,7 @@ gem 'rails', '3.0.3'
 gem 'paperclip', '~> 2.3'
 gem 'bcrypt-ruby', :require => 'bcrypt'
 gem 'jquery-rails', '>= 0.2.6'
+gem 'aws-s3'
 
 group :development, :test do
   gem 'sqlite3-ruby', :require => 'sqlite3'
@@ -22,7 +23,6 @@ group :development do
   gem 'interactive_editor'
   gem 'heroku'
   gem 'taps'
-  gem 'aws-s3'
 end
 
 # Use unicorn as the web server
