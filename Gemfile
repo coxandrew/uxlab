@@ -7,7 +7,7 @@ gem 'jquery-rails', '>= 0.2.6'
 
 group :development, :test do
   gem 'sqlite3-ruby', :require => 'sqlite3'
-  gem 'awesome_print', :require => 'ap'
+  # gem 'awesome_print', :require => 'ap'
 end
 
 group :test do
