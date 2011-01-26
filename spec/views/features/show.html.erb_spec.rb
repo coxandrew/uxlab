@@ -6,7 +6,7 @@ describe "features/show.html.erb" do
     @feature = assign(:feature, stub_model(Feature))
   end
 
-  it "renders attributes in <p>" do
+  it "renders" do
     render
   end
 end
