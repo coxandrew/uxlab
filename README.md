@@ -74,8 +74,8 @@ UX Lab is a free resource manager for storing and sharing design images and docu
 * X Deploy to Heroku
 * X Authentication
 * X Testing (RSpec)
-* Consistent navigation (sidebar, breadcrumbs)
-* Delete Projects, flows & screens
+* Consistent navigation (sidebar, breadcrumbs?)
+* Delete Projects, & flows
 
 ### Final Checkpoint
 
@@ -103,12 +103,24 @@ UX Lab is a free resource manager for storing and sharing design images and docu
 
 ### Rails 3 Tips
 
-* Link to nested routes using arrays:
+Link to nested routes using arrays. The following equates to: `project_features_path(@project, @feature)`:
 
     <%= link_to "Feature", [@project, @feature] %>
 
-* Stub current_user in the application_controller
+Stub current_user from the application_controller
 
     before(:each) do
       controller.stub!(:current_user).and_return(mock_model(User))
+    end
+
+Stub associations used for building or creating new associated objects:
+
+    it "assigns a new feature as @feature" do
+      Project.stub(:find).with("37") { mock_project }
+      feature_proxy = mock('feature association proxy', :build => mock_feature)
+      mock_project.stub(:features).and_return(feature_proxy)
+
+      get :new, :project_id => "37"
+      assigns(:project).should be(mock_project)
+      assigns(:feature).should be(mock_feature)
     end
