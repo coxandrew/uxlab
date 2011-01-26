@@ -103,4 +103,12 @@ UX Lab is a free resource manager for storing and sharing design images and docu
 
 ### Rails 3 Tips
 
+* Link to nested routes using arrays:
+
     <%= link_to "Feature", [@project, @feature] %>
+
+* Stub current_user in the application_controller
+
+    before(:each) do
+      controller.stub!(:current_user).and_return(mock_model(User))
+    end

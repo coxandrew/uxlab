@@ -2,25 +2,18 @@ class FlowsController < ApplicationController
   before_filter :get_project, :only => [:show, :new, :create, :update, :edit]
   before_filter :get_feature, :only => [:show, :new, :create, :update, :edit]
 
-  # GET /flows/1
-  # GET /flows/1.xml
   def show
     @flow = Flow.find(params[:id])
   end
 
-  # GET /flows/new
-  # GET /flows/new.xml
   def new
     @flow = @feature.flows.build
   end
 
-  # GET /flows/1/edit
   def edit
     @flow = Flow.find(params[:id])
   end
 
-  # POST /flows
-  # POST /flows.xml
   def create
     @flow = Flow.new(params[:flow])
 
@@ -31,8 +24,6 @@ class FlowsController < ApplicationController
     end
   end
 
-  # PUT /flows/1
-  # PUT /flows/1.xml
   def update
     @flow = Flow.find(params[:id])
 
@@ -43,8 +34,6 @@ class FlowsController < ApplicationController
     end
   end
 
-  # DELETE /flows/1
-  # DELETE /flows/1.xml
   def destroy
     @flow = Flow.find(params[:id])
     @flow.destroy

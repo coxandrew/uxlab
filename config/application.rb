@@ -43,6 +43,6 @@ module Uxlab
       g.test_framework :rspec
     end
 
-    config.action_view.javascript_expansions[:defaults] = ['jquery-1.4.4.min', 'rails']
+    config.action_view.javascript_expansions[:defaults] = ['jquery', 'rails']
   end
 end

@@ -14,11 +14,11 @@ describe SessionsController do
 
     it "logs a user in" do
       User.create(
-        :username => 'cox',
+        :username => 'jenkins',
         :password => 'sausage',
         :password_confirmation => 'sausage'
       )
-      post :create, :username => 'cox', :password => 'sausage'
+      post :create, :username => 'jenkins', :password => 'sausage'
       response.should redirect_to(root_path)
     end
   end

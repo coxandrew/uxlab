@@ -11,8 +11,6 @@ class ScreensController < ApplicationController
     @screen = Screen.find(params[:id])
   end
 
-  # POST /projects
-  # POST /projects.xml
   def create
     @screen = Screen.new(params[:screen])
 
