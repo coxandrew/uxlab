@@ -1,6 +1,8 @@
 <h2>
   <%= @feature.name %>
-  <%= link_to '(Edit)', edit_project_feature_path(@project, @feature), :class => "inline_edit" %>
+  <% if can? :edit, @feature %>
+    <%= link_to '(Edit)', edit_project_feature_path(@project, @feature), :class => "inline_edit" %>
+  <% end %>
 </h2>
 
 <p class="description">
@@ -13,8 +15,10 @@
   </ul>
 <% end %>
 
-<div class="actions">
-<%= link_to "Add new user flow",
-  new_project_feature_flow_path(@project, @feature)
- %>
-</div>
+<% if can? :edit, @feature %>
+  <div class="actions">
+  <%= link_to "Add new user flow",
+    new_project_feature_flow_path(@project, @feature)
+   %>
+  </div>
+<% end %>

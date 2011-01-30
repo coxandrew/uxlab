@@ -5,6 +5,7 @@ gem 'paperclip', '~> 2.3'
 gem 'bcrypt-ruby', :require => 'bcrypt'
 gem 'jquery-rails', '>= 0.2.6'
 gem 'aws-s3'
+gem 'cancan'
 
 group :development, :test do
   gem 'sqlite3-ruby', :require => 'sqlite3'

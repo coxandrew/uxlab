@@ -63,6 +63,12 @@ p#info {
 #main li {
   margin: 0.5em 0;
 }
+hr {
+  height: 1px;
+  color: #ccc;
+  background-color: #ccc;
+  border: 0;
+}
 
 /* =layout
 ------------------------------------------------------------------ */
@@ -244,8 +250,8 @@ input.name {
 body.sessions {
   background: #eee;
 }
-#login {
-  width: 400px;
+body.sessions #main {
+  width: 420px;
   margin: auto;
 }
 #login h2 {

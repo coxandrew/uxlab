@@ -1,5 +1,7 @@
 <h2>Projects</h2>
 
+<hr />
+
 <% if @projects.any? %>
   <ul id="projects">
     <%= render @projects %>
@@ -10,4 +12,6 @@
   </p>
 <% end %>
 
-<%= link_to 'New Project', new_project_path %>
+<% if can? :create, Project %>
+  <%= link_to 'New Project', new_project_path %>
+<% end %>
