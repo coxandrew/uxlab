@@ -12,9 +12,8 @@ class ProjectsController < ApplicationController
   end
 
   def create
-    @project = Project.new(params[:project].merge(
-      :owner_id => current_user.id)
-    )
+    @project = Project.new(params[:project])
+    @project.owner = current_user
     if @project.save
       current_user.add_role_to_project(Role.find_by_name("owner"), @project)
       redirect_to(@project, :notice => 'Project was successfully created.')
