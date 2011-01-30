@@ -1,11 +1,7 @@
-<% if @project.features.any? %>
-  <h2>Features</h2>
-
-  <ul id="features">
-    <%= render @project.features %>
-  </ul>
-<% end %>
-
-<p>
-  <%= link_to "Add feature", new_project_feature_path(@project.id) %>
+<p class="description">
+  <% if @project.description.present? %>
+    <%= @project.description %>
+  <% else %>
+    <em>No description.</em>
+  <% end %>
 </p>

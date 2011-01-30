@@ -4,6 +4,33 @@
 
 UX Lab is a free resource manager for storing and sharing design images and documents for a project.
 
+## User flows
+
+* Login
+* Add user to a project
+  * as an owner
+  * as a member
+  * as a viewer
+* Create a new project
+* Add a feature to a project
+* Re-order features in a project
+
+## Roles
+
+* account owner
+  * can create projects
+* project owner
+  * can add/remove users to a project
+  * can assign role to a user on a project
+  * can do everything a project member can
+* project member
+  * can add/edit/delete:
+    * features
+    * user flows
+    * screens
+* project viewer
+  * can only view features, user flows, screens
+
 ## Data Model
 
     user
@@ -74,13 +101,12 @@ UX Lab is a free resource manager for storing and sharing design images and docu
 * X Deploy to Heroku
 * X Authentication
 * X Testing (RSpec)
-* Consistent navigation (sidebar, breadcrumbs?)
-* Delete Projects, & flows
 
 ### Final Checkpoint
 
+* Consistent navigation (sidebar, breadcrumbs?)
+* Delete Projects, & flows
 * User roles (owner, member, viewer for each project)
-* Cucumber testing
 * Nice paging through of flow w/ jQuery UI lightbox
 * Sortable images in a flow
 * Sortable features in a project

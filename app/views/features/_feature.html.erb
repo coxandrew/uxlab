@@ -1,3 +1,5 @@
 <li>
-  <%= link_to feature.name, project_feature_path(feature.project, feature) %>
+  <%= link_to feature.name,
+    project_feature_path(feature.project.id , feature),
+    :class => (@feature == feature) ? "current" : "" %>
 </li>

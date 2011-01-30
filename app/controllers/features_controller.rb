@@ -1,6 +1,7 @@
 class FeaturesController < ApplicationController
   before_filter :get_project, :only => [:show, :new, :create, :edit]
   before_filter :get_feature, :only => [:show, :edit]
+  before_filter :get_features, :only => [:show, :new, :edit]
 
   def new
     @feature = @project.features.build

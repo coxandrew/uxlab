@@ -1,0 +1,19 @@
+<% if @features %>
+<div id="sidebar">
+  <h3>Features</h3>
+
+  <% if @features.any? %>
+    <ul id="sidebar_links">
+      <%= render @features, :as => "feature_link" %>
+    </ul>
+  <% else %>
+    <p>
+      You have no features yet.
+    </p>
+  <% end %>
+
+  <p>
+    <%= link_to "Add feature", new_project_feature_path(@project.id) %>
+  </p>
+</div>
+<% end %>

@@ -11,14 +11,23 @@
   </script>
   <%= csrf_meta_tag %>
 </head>
-<body class="<%= body_class(controller) %>">
 
-<%= render "shared/header" %>
-<%= render "shared/project_tabs" %>
+<% sidebar = render("shared/sidebar")  %>
+<% num_columns = (sidebar.length > 0) ? "two_column" : "one_column" %>
+<body class="<%= body_class(controller) %> <%= num_columns %>">
 
-<div id="main">
-  <%= render "shared/notices" %>
-  <%= yield %>
+<div id="wrapper">
+  <%= render "shared/header" %>
+  <%= render "shared/project_tabs" %>
+
+  <%= sidebar %>
+
+  <div id="main">
+    <%= render "shared/notices" %>
+    <%= yield %>
+  </div>
+
+  <%= render "shared/footer" %>
 </div>
 
 </body>
