@@ -29,19 +29,11 @@ class User < ActiveRecord::Base
     ).count > 0
   end
 
-  def self.with_role(role)
-    joins(:roles).where(:roles => {:name => role})
-  end
-
   def add_role_to_project(role, project)
-    assn = Assignment.first(:conditions =>
-      { :user_id => self.id,
-      :project_id => project.id }
-    ) || Assignment.new(
-      :user_id => self.id,
+    Assignment.find_or_initialize_by_user_id_and_project_id(
+      :user_id    => self.id,
       :project_id => project.id
-    )
-    assn.update_attributes(:role_id => role.id)
+    ).update_attributes(:role_id => role.id)
   end
 
   private
