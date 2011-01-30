@@ -7,8 +7,4 @@ class Screen < ActiveRecord::Base
     :s3_credentials => "#{Rails.root.to_s}/config/s3.yml"
 
   validates_attachment_presence :image
-
-  def friendly_name
-    "Screen"
-  end
 end
