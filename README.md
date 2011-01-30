@@ -104,6 +104,7 @@ UX Lab is a free resource manager for storing and sharing design images and docu
 
 ### Final Checkpoint
 
+* X Improve general look 'n feel
 * X Consistent navigation (sidebar, breadcrumbs?)
 * X User roles (owner, member, viewer for each project)
 * X Delete Projects, features & flows
