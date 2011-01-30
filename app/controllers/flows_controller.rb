@@ -1,6 +1,8 @@
 class FlowsController < ApplicationController
-  before_filter :get_project, :only => [:show, :new, :create, :update, :edit]
-  before_filter :get_feature, :only => [:show, :new, :create, :update, :edit]
+  load_and_authorize_resource :project
+  load_and_authorize_resource :feature
+  load_and_authorize_resource :flow, :through => :feature
+
   before_filter :get_features, :only => [:show, :new, :edit]
 
   def show
@@ -40,15 +42,5 @@ class FlowsController < ApplicationController
     @flow.destroy
 
     redirect_to(flows_url)
-  end
-
-  private
-
-  def get_project
-    @project = Project.find(params[:project_id])
-  end
-
-  def get_feature
-    @feature = Feature.find(params[:feature_id])
   end
 end

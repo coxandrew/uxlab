@@ -1,6 +1,7 @@
 class FeaturesController < ApplicationController
-  before_filter :get_project, :only => [:show, :new, :create, :edit]
-  before_filter :get_feature, :only => [:show, :edit]
+  load_and_authorize_resource :project
+  load_and_authorize_resource :feature, :through => :project
+
   before_filter :get_features, :only => [:show, :new, :edit]
 
   def new
@@ -32,15 +33,5 @@ class FeaturesController < ApplicationController
     @feature.destroy
 
     redirect_to(features_url)
-  end
-
-  private
-
-  def get_project
-    @project = Project.find(params[:project_id])
-  end
-
-  def get_feature
-    @feature = Feature.find(params[:id])
   end
 end

@@ -4,6 +4,7 @@ class User < ActiveRecord::Base
 
   has_one :assignment
   has_one :role, :through => :assignment
+  has_many :projects, :foreign_key => "owner_id"
 
   validates_presence_of :password, :on => :create
   validates_confirmation_of :password

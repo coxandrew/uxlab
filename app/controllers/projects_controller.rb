@@ -1,5 +1,6 @@
 class ProjectsController < ApplicationController
-  before_filter :get_project, :only => [:show, :edit, :update, :destroy]
+  load_and_authorize_resource
+
   before_filter :get_features, :only => [:show]
 
   def index
@@ -11,7 +12,9 @@ class ProjectsController < ApplicationController
   end
 
   def create
-    @project = Project.new(params[:project])
+    @project = Project.new(params[:project].merge(
+      :owner_id => current_user.id)
+    )
     if @project.save
       redirect_to(@project, :notice => 'Project was successfully created.')
     else
@@ -32,11 +35,5 @@ class ProjectsController < ApplicationController
     flash[:notice] = "#{@project.name} was successfully deleted."
 
     redirect_to(root_path)
-  end
-
-  private
-
-  def get_project
-    @project = Project.find(params[:id])
   end
 end

@@ -8,6 +8,11 @@ class ApplicationController < ActionController::Base
 
   private
 
+  rescue_from CanCan::AccessDenied do |exception|
+    flash[:error] = "Sorry, you are not permitted to view that page."
+    redirect_back_or_default
+  end
+
   def current_user
     @current_user ||= User.find(session[:username]) if session[:username]
   end
@@ -25,14 +30,19 @@ class ApplicationController < ActionController::Base
 
   def login_required
     if current_user.nil?
-      session[:return_to] = request.fullpath
-      redirect_to sessions_new_path, :alert => "You must first log in before accessing this page"
+      store_request
+      redirect_to sessions_new_path,
+        :alert => "You must first log in before accessing this page"
     end
   end
 
   def redirect_back_or_default(default = root_path)
     redirect_to(session[:return_to] || default)
     session[:return_to] = nil
+  end
+
+  def store_request
+    session[:return_to] = request.fullpath
   end
 
   def get_features

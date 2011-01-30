@@ -16,8 +16,10 @@ cox    = User.create(user_defaults.merge(:username => 'cox'))
 cox.role = owner
 
 # University Web
-uni_web = Project.create(:name => "University Web",
-  :description => "School administration app for Ruby Mendicant University")
+uni_web = Project.create(
+  :name => "University Web",
+  :description => "School administration app for Ruby Mendicant University",
+  :owner_id => jordan.id)
 admin_users = Feature.create(:name => "User Administration",
   :description => "Add, edit and delete users. Assign permissions. Track students' progress throughout a course.",
   :project_id => uni_web.id)
@@ -31,8 +33,10 @@ Flow.create(:name => "Add users to course",
   :feature_id => admin_courses.id)
 
 # UX Lab
-ux_lab = Project.create(:name => "UX Lab",
-  :description => "A resource manager for storing and sharing design images and documents for a project.")
+ux_lab = Project.create(
+  :name => "UX Lab",
+  :description => "A resource manager for storing and sharing design images and documents for a project.",
+  :owner_id => cox.id)
 Feature.create(:name => "Projects",
   :description => "A project is the main organizational element that contains all of your features.",
   :project_id => ux_lab.id)
