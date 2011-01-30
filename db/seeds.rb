@@ -26,6 +26,8 @@ Flow.create(:name => "Add user to RMU",
   :feature_id => admin_users.id)
 Flow.create(:name => "Add users to course",
   :feature_id => admin_courses.id)
+Flow.create(:name => "Add new IRC channel to course",
+  :feature_id => admin_courses.id)
 
 # UX Lab
 ux_lab = Project.create(
