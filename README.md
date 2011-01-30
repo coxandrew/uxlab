@@ -104,16 +104,20 @@ UX Lab is a free resource manager for storing and sharing design images and docu
 
 ### Final Checkpoint
 
-* Consistent navigation (sidebar, breadcrumbs?)
-* Delete Projects, & flows
-* User roles (owner, member, viewer for each project)
+* X Consistent navigation (sidebar, breadcrumbs?)
+* X User roles (owner, member, viewer for each project)
+* Delete Projects, features & flows
 * Nice paging through of flow w/ jQuery UI lightbox
+
+### Next Steps
+
+* UI improvements
+  * more consistent edit | delete links
+  * graphical buttons
+  * screen thumbnails with name and caption
 * Sortable images in a flow
 * Sortable features in a project
 * Make screens re-usable across multiple flows (e.g. re-use the 'login' screen for many flows)
-* UI improvements:
-  * Nice header
-  * Image button links
 * Comments on flows and/or images
 * Multiple versions of flows (e.g. sketch, wireframe, mockup)
 
