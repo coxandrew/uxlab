@@ -4,7 +4,7 @@ class ProjectsController < ApplicationController
   before_filter :get_features, :only => [:show]
 
   def index
-    @projects = Project.all
+    @projects = current_user.projects
   end
 
   def new
@@ -16,6 +16,7 @@ class ProjectsController < ApplicationController
       :owner_id => current_user.id)
     )
     if @project.save
+      current_user.add_role_to_project(Role.find_by_name("owner"), @project)
       redirect_to(@project, :notice => 'Project was successfully created.')
     else
       render :action => "new"

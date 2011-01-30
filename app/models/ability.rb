@@ -2,30 +2,41 @@ class Ability
   include CanCan::Ability
 
   def initialize(user)
-    if user.role? :owner
-      can :manage, Project, :owner_id => user.id
-
-      # TODO: Are these conditional blocks necessary?
-      #
-      # If they're not authorized to manage the project, we may not need
-      # to check these.
-      can :manage, Feature do |feature|
-        feature.project.owner_id == user.id
-      end
-      can :manage, Flow do |flow|
-        flow.feature.project.owner_id == user.id
-      end
-      can :manage, Screen
+    # Projects
+    can :manage, Project do |project|
+      user.role_in_project?(:owner, project)
+    end
+    can :create, Project
+    can :read, Project do |project|
+      user.role_in_project?(:member, project) ||
+        user.role_in_project?(:viewer, project)
     end
 
-    if user.role? :member
-      can :manage, Feature
-      can :manage, Flow
-      can :manage, Screen
+    # Features
+    can :manage, Feature do |feature|
+      user.role_in_project?(:owner, feature.project) ||
+        user.role_in_project?(:member, feature.project)
+    end
+    can :read, Feature do |feature|
+      user.role_in_project?(:viewer, feature.project)
     end
 
-    if user.role? :viewer
-      can :read, :all
+    # Flows
+    can :manage, Flow do |flow|
+      user.role_in_project?(:owner, flow.feature.project) ||
+        user.role_in_project?(:member, flow.feature.project)
+    end
+    can :read, Flow do |flow|
+      user.role_in_project?(:viewer, flow.feature.project)
+    end
+
+    # Screens
+    can :manage, Screen do |screen|
+      user.role_in_project?(:owner, screen.flow.feature.project) ||
+        user.role_in_project?(:member, screen.flow.feature.project)
+    end
+    can :read, Screen do |screen|
+      user.role_in_project?(:viewer, screen.flow.feature.project)
     end
   end
 end

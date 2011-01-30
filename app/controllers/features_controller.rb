@@ -22,7 +22,8 @@ class FeaturesController < ApplicationController
     @feature = Feature.find(params[:id])
 
     if @feature.update_attributes(params[:feature])
-      redirect_to(@feature, :notice => 'Feature was successfully updated.')
+      redirect_to([@project, @feature],
+        :notice => 'Feature was successfully updated.')
     else
       render :action => "edit"
     end

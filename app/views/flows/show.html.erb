@@ -2,7 +2,9 @@
 
 <h4>
   <%= @flow.name %>
-  <%= link_to '(Edit)', edit_project_feature_flow_path(@project, @feature, @flow), :class => "inline_edit" %>
+  <% if can? :edit, @flow %>
+    <%= link_to '(Edit)', edit_project_feature_flow_path(@project, @feature, @flow), :class => "inline_edit" %>
+  <% end %>
 </h4>
 
 <p class="description">
@@ -13,10 +15,16 @@
   <ul class="screens clearfix">
     <%= render @flow.screens %>
   </ul>
+<% else %>
+  <p>
+    There are no screens for this user flow yet.
+  </p>
 <% end %>
 
+<% if can? :edit, @flow %>
 <div class="actions">
 <%= link_to "Add new screen",
   new_project_feature_flow_screen_path(@project, @feature, @flow)
  %>
 </div>
+<% end %>

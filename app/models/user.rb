@@ -2,9 +2,9 @@ class User < ActiveRecord::Base
   attr_accessible :username, :password, :password_confirmation
   attr_accessor :password
 
-  has_one :assignment
-  has_one :role, :through => :assignment
-  has_many :projects, :foreign_key => "owner_id"
+  has_many :assignments
+  has_many :roles, :through => :assignments
+  has_many :projects, :through => :assignments
 
   validates_presence_of :password, :on => :create
   validates_confirmation_of :password
@@ -22,12 +22,26 @@ class User < ActiveRecord::Base
     self.password_hash == encrypt_password(pass)
   end
 
-  def role?(role)
-    self.role == Role.find_by_name(role)
+  def role_in_project?(role, project)
+    assignments.where(
+      :role_id    => Role.find_by_name(role).id,
+      :project_id => project.id
+    ).count > 0
   end
 
   def self.with_role(role)
-    joins(:role).where(:roles => {:name => role})
+    joins(:roles).where(:roles => {:name => role})
+  end
+
+  def add_role_to_project(role, project)
+    assn = Assignment.first(:conditions =>
+      { :user_id => self.id,
+      :project_id => project.id }
+    ) || Assignment.new(
+      :user_id => self.id,
+      :project_id => project.id
+    )
+    assn.update_attributes(:role_id => role.id)
   end
 
   private

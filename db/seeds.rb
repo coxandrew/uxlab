@@ -5,15 +5,10 @@ viewer = Role.create(:name => "viewer")
 
 # Users
 user_defaults = { :password => 'tronguy', :password_confirmation => 'tronguy' }
-
-jordan = User.create(user_defaults.merge(:username => 'jordanbyron'))
-jordan.role = member
+greg    = User.create(user_defaults.merge(:username => 'seacreature'))
+jordan  = User.create(user_defaults.merge(:username => 'jordanbyron'))
 tronguy = User.create(user_defaults.merge(:username => 'tronguy'))
-tronguy.role = viewer
-greg = User.create(user_defaults.merge(:username => 'seacreature'))
-jordan.role = owner
-cox    = User.create(user_defaults.merge(:username => 'cox'))
-cox.role = owner
+cox     = User.create(user_defaults.merge(:username => 'cox'))
 
 # University Web
 uni_web = Project.create(
@@ -46,3 +41,15 @@ Feature.create(:name => "Features",
 Feature.create(:name => "User Flows",
   :description => "Add flows from the user's perspective for all important UI interactions. Flows will include a set of re-orderable screenshots.",
   :project_id => ux_lab.id)
+
+# User Roles
+jordan.add_role_to_project(owner, uni_web)
+jordan.add_role_to_project(member, ux_lab)
+
+tronguy.add_role_to_project(viewer, uni_web)
+
+greg.add_role_to_project(member, uni_web)
+greg.add_role_to_project(viewer, ux_lab)
+
+cox.add_role_to_project(owner, ux_lab)
+cox.add_role_to_project(member, uni_web)

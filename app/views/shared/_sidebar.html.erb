@@ -12,8 +12,10 @@
     </p>
   <% end %>
 
+  <% if can? :edit, @project %>
   <p>
     <%= link_to "Add feature", new_project_feature_path(@project.id) %>
   </p>
+  <% end %>
 </div>
 <% end %>

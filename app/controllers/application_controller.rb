@@ -24,8 +24,7 @@ class ApplicationController < ActionController::Base
   end
 
   def user_projects
-    # TODO: Get only projects that current_user can see
-    @user_projects ||= Project.all
+    @user_projects ||= current_user.projects
   end
 
   def login_required
