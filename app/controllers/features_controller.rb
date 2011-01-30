@@ -33,6 +33,6 @@ class FeaturesController < ApplicationController
     @feature = Feature.find(params[:id])
     @feature.destroy
 
-    redirect_to(features_url)
+    redirect_to @project, :notice => "Feature was successfully deleted."
   end
 end

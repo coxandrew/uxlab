@@ -204,6 +204,17 @@ h2 a:hover {
 .field {
   margin: 1em 0;
 }
+h2 .inline_edit {
+  font-size: 50%;
+}
+.inline_edit a:link,
+.inline_edit a:visited,
+.inline_edit a:hover,
+.inline_edit a:active {
+  text-decoration: underline;
+  color: #888;
+}
+
 a.inline_edit:link,
 a.inline_edit:visited,
 a.inline_edit:hover,
