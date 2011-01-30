@@ -150,3 +150,9 @@ Stub associations used for building or creating new associated objects:
       assigns(:project).should be(mock_project)
       assigns(:feature).should be(mock_feature)
     end
+
+Use new Arel query syntax to define custom lookups through associations:
+
+    def self.with_role(role)
+      joins(:role).where(:roles => {:name => role})
+    end

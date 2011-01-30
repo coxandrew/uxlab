@@ -1,8 +1,17 @@
+owner  = Role.create(:name => "owner")
+member = Role.create(:name => "member")
+viewer = Role.create(:name => "viewer")
+
 user_defaults = { :password => 'tronguy', :password_confirmation => 'tronguy' }
-users = ['cox', 'jordanbyron', 'seacreature', 'tronguy']
+users = ['jordanbyron', 'seacreature', 'tronguy']
 users.each do |user|
-  User.create(user_defaults.merge(:username => user))
+  u = User.create(user_defaults.merge(:username => user))
+  u.role = viewer
 end
+cox = User.create(user_defaults.merge(
+  :username => 'cox'
+))
+cox.role = owner
 
 # University Web
 uni_web = Project.create(:name => "University Web",

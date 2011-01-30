@@ -33,6 +33,7 @@ describe FeaturesController do
       Project.stub(:find).with("37") { mock_project }
       feature_proxy = mock('feature association proxy', :build => mock_feature)
       mock_project.stub(:features).and_return(feature_proxy)
+      feature_proxy.stub(:select)
 
       get :new, :project_id => "37"
       assigns(:project).should be(mock_project)
