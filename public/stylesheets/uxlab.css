@@ -1,7 +1,6 @@
 /* =colors
    --------------------------------------------------------------- **
 ** #003366 - link color
-** #888888 - link visited
 ** --------------------------------------------------------------- */
 
 /* =toc
@@ -18,12 +17,10 @@
 /* =general
 ------------------------------------------------------------------ */
 a:link,
+a:visited,
 a:hover,
 a:active {
   color: #036;
-}
-a:visited {
-  color: #888;
 }
 body {
   background: #fff;
@@ -210,11 +207,28 @@ body.sessions {
 ------------------------------------------------------------------ */
 ul#projects {
   list-style-type: none;
-  margin-left: 0;
+  margin: 0.5em 0 1em;
+}
+ul#projects li {
+  border: 1px solid #ccc;
+  padding: 0 1em;
+  margin: 1em 0;
 }
 .project_controls {
   float: right;
   line-height: 1.6;
+  font-size: 80%;
+  padding-top: 0.25em;
+  margin-right: -0.75em;
+}
+.project_controls a:link,
+.project_controls a:visited,
+.project_controls a:hover,
+.project_controls a:active {
+  color: #888;
+}
+.project_controls a:hover {
+  color: #036;
 }
 p.description {
   margin-top: 0.5em;
