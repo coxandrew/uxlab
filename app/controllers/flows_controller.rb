@@ -1,6 +1,7 @@
 class FlowsController < ApplicationController
   before_filter :get_project, :only => [:show, :new, :create, :update, :edit]
   before_filter :get_feature, :only => [:show, :new, :create, :update, :edit]
+  before_filter :get_features, :only => [:show, :new, :edit]
 
   def show
     @flow = Flow.find(params[:id])

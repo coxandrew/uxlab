@@ -1,6 +1,7 @@
 class ScreensController < ApplicationController
   before_filter :get_project, :only => [:new, :show, :destroy, :create]
   before_filter :get_feature, :only => [:new, :show, :destroy, :create]
+  before_filter :get_features, :only => [:show, :new]
 
   def new
     @flow = Flow.find(params[:flow_id])
