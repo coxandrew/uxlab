@@ -106,11 +106,11 @@ UX Lab is a free resource manager for storing and sharing design images and docu
 
 * X Consistent navigation (sidebar, breadcrumbs?)
 * X User roles (owner, member, viewer for each project)
-* Delete Projects, features & flows
-* Nice paging through of flow w/ jQuery UI lightbox
+* X Delete Projects, features & flows
 
 ### Next Steps
 
+* Nice paging through of flow w/ jQuery UI lightbox
 * UI improvements
   * more consistent edit | delete links
   * graphical buttons
