@@ -3,7 +3,11 @@
 <h4>
   <%= @flow.name %>
   <% if can? :edit, @flow %>
-    <%= link_to '(Edit)', edit_project_feature_flow_path(@project, @feature, @flow), :class => "inline_edit" %>
+    <span class="inline_edit">
+    <%= link_to 'Edit', edit_project_feature_flow_path(@project, @feature, @flow) %> |
+    <%= link_to 'Delete', [@project, @feature, @flow], :method => :delete,
+      :confirm => "Are you sure you want to delete this flow?" %>
+    </span>
   <% end %>
 </h4>
 

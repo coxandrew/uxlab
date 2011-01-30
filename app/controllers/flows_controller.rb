@@ -41,6 +41,6 @@ class FlowsController < ApplicationController
     @flow = Flow.find(params[:id])
     @flow.destroy
 
-    redirect_to(flows_url)
+    redirect_to [@project, @feature], :notice => "Flow was successfully deleted."
   end
 end
