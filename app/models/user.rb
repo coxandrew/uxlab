@@ -24,7 +24,7 @@ class User < ActiveRecord::Base
 
   def role_in_project?(role, project)
     assignments.where(
-      :role_id    => Role.find_by_name(role).id,
+      :role_id    => Role.find_all_by_name(role),
       :project_id => project.id
     ).count > 0
   end
