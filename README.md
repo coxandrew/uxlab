@@ -1,8 +1,8 @@
 ## Overview
 
-UX Lab is an open source resource manager for collaborating on an application. Start by defining a project's features and user flows. Then upload screens that show the visual workflow of all key user interactions within your application.
+UX Lab is an open source resource manager for collaborating on an application. Start by defining a project's features and user flows. Then add screens that show the visual workflow of all key user interactions within your application.
 
-UX Lab is ideal for organizing your thoughts and sharing ideas with team members. Upload sketches, wireframes, mockups or screenshots of your working application. And it's completely free!
+Upload sketches, wireframes, mockups or screenshots of your working application. UX Lab is ideal for organizing your thoughts and sharing ideas with team members. And it's completely free!
 
 ## Demo
 
