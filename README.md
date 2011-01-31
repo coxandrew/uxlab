@@ -2,162 +2,78 @@
 
 ## Overview
 
-UX Lab is a free resource manager for storing and sharing design images and documents for a project.
+UX Lab is an open source resource manager for collaborating on an application.
 
-## User flows
+Start by defining a project's features and user flows. Then upload screens that show the visual workflow of all key user interactions within your application.
 
-* Login
-* Add user to a project
-  * as an owner
-  * as a member
-  * as a viewer
-* Create a new project
-* Add a feature to a project
-* Re-order features in a project
+UX Lab is ideal for organizing your thoughts and sharing ideas with team members. Upload sketches, wireframes, mockups or screenshots of your working application. And it's completely free!
 
-## Roles
+## Demo
 
-* account owner
-  * can create projects
-* project owner
-  * can add/remove users to a project
-  * can assign role to a user on a project
-  * can do everything a project member can
-* project member
-  * can add/edit/delete:
-    * features
-    * user flows
-    * screens
-* project viewer
-  * can only view features, user flows, screens
+You can check out a live demo of UX Lab at [uxlab.heroku.com] (http://uxlab.heroku.com) and log in with:
 
-## Data Model
+    user: tronguy
+    pass: tronguy
 
-    user
-      has_many :projects, :through => :user_projects
+## Quickstart
 
-      username
-      password
-      password_confirmation
+If you want to start your own project locally, you can grab this project and start working almost immediately:
 
-    user_projects
-      belongs_to :user
-      belongs_to :project
+* Fork this repository and then clone it:
+    $ git clone git@github.com:<username>/uxlab.git
+* Make sure you're using Ruby 1.9.2 (there's an .rvmrc.example file if you're using rvm), and then just use Bundler to handle the gems:
+    $ bundle install
+* Set up the database:
+    $ rake db:reset
+* Start the server
+    $ rails s
 
-      user_id
-      project_id
+Now you should be able to log into your local version of UX Lab at the default Rails URL:
 
-    project
-      has_many :users, :through => :user_projects
-      has_many :features
+[http://localhost:3000/](http://localhost:3000/)
 
-      name
-      description
+... with the default user of:
 
-    features
-      belongs_to :project
-      has_many :flows
+    username: admin
+    password: password
 
-      name
-      description
+## Hosting
 
+The easiest way to get started with UX Lab is to fork the repository and host it on [Heroku](http://heroku.com/).
 
-    flow
-      belongs_to :feature
-      has_many :screens
+* Install the heroku gem
+    $ gem install heroku
+* Create a heroku app
+    $ heroku create
+* Create a user locally (either by modifying seeds.rb or using the console)
+* Push your app to Heroku
+    $ git push heroku master
+* Install the 'taps' gem (for managing Heroku's database)
+* Push your local database to Heroku
+    $ heroku db:push
 
-      name
-      description
+Soon, there will be a cleaner way to create initial users and change passwords, but for now you will have to manage your initial users locally before pushing your local database to Heroku.
 
-    screen
-      belongs_to :flow
+## License
 
-      name
-      caption
-      flow_id
+(MIT License)
 
-## TODO
+Copyright (c) 2011 Andrew Cox
 
-### Checkpoint #1
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
 
-* X Create projects
-* Push to github
-* X CSS Reset
-* X Basic styling
-* X Create user flows for a project
-* X Upload images directly to a user flow (paperclip)
+The above copyright notice and this permission notice shall be included in
+all copies or substantial portions of the Software.
 
-#### Feedback
-
-* X Don't use for loops: https://github.com/sudrew/uxlab/blob/master/app/views/flows/show.html.erb#L14
-* X Use `unless @project.flows.empty?` or `if @project.flows.any?` instead of `if @project.flows.length > 0`
-
-### Checkpoint #2
-
-* X Thumbnail images w/ ImageMagick
-* X Make screen thumbnails nicer
-* X Make nice, common error message partial
-* X Set up Amazon S3
-* X Deploy to Heroku
-* X Authentication
-* X Testing (RSpec)
-
-### Final Checkpoint
-
-* X Improve general look 'n feel
-* X Consistent navigation (sidebar, breadcrumbs?)
-* X User roles (owner, member, viewer for each project)
-* X Delete Projects, features & flows
-
-### Next Steps
-
-* Nice paging through of flow w/ jQuery UI lightbox
-* UI improvements
-  * more consistent edit | delete links
-  * graphical buttons
-  * screen thumbnails with name and caption
-* Sortable images in a flow
-* Sortable features in a project
-* Make screens re-usable across multiple flows (e.g. re-use the 'login' screen for many flows)
-* Comments on flows and/or images
-* Multiple versions of flows (e.g. sketch, wireframe, mockup)
-
-## Lessons Learned
-
-### Tell Heroku not to instal development and test gems
-
-    $ heroku config:add BUNDLE_WITHOUT="development:test"
-
-### Amazon S3
-
-### Paperclip
-
-### Rails 3 Tips
-
-Link to nested routes using arrays. The following equates to: `project_features_path(@project, @feature)`:
-
-    <%= link_to "Feature", [@project, @feature] %>
-
-Stub current_user from the application_controller
-
-    before(:each) do
-      controller.stub!(:current_user).and_return(mock_model(User))
-    end
-
-Stub associations used for building or creating new associated objects:
-
-    it "assigns a new feature as @feature" do
-      Project.stub(:find).with("37") { mock_project }
-      feature_proxy = mock('feature association proxy', :build => mock_feature)
-      mock_project.stub(:features).and_return(feature_proxy)
-
-      get :new, :project_id => "37"
-      assigns(:project).should be(mock_project)
-      assigns(:feature).should be(mock_feature)
-    end
-
-Use new Arel query syntax to define custom lookups through associations:
-
-    def self.with_role(role)
-      joins(:role).where(:roles => {:name => role})
-    end
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+THE SOFTWARE.
