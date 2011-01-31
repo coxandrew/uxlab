@@ -1,16 +1,12 @@
-# UX Lab
-
 ## Overview
 
-UX Lab is an open source resource manager for collaborating on an application.
-
-Start by defining a project's features and user flows. Then upload screens that show the visual workflow of all key user interactions within your application.
+UX Lab is an open source resource manager for collaborating on an application. Start by defining a project's features and user flows. Then upload screens that show the visual workflow of all key user interactions within your application.
 
 UX Lab is ideal for organizing your thoughts and sharing ideas with team members. Upload sketches, wireframes, mockups or screenshots of your working application. And it's completely free!
 
 ## Demo
 
-You can check out a live demo of UX Lab at [uxlab.heroku.com] (http://uxlab.heroku.com) and log in with:
+You can check out a live demo of UX Lab at [uxlab.heroku.com](http://uxlab.heroku.com) and log in with:
 
     user: tronguy
     pass: tronguy
@@ -19,13 +15,20 @@ You can check out a live demo of UX Lab at [uxlab.heroku.com] (http://uxlab.hero
 
 If you want to start your own project locally, you can grab this project and start working almost immediately:
 
-* Fork this repository and then clone it:
+Fork this repository and then clone it:
+
     $ git clone git@github.com:<username>/uxlab.git
-* Make sure you're using Ruby 1.9.2 (there's an .rvmrc.example file if you're using rvm), and then just use Bundler to handle the gems:
+
+Make sure you're using Ruby 1.9.2 (there's an .rvmrc.example file if you're using rvm), and then just use Bundler to handle the gems:
+
     $ bundle install
-* Set up the database:
+
+Set up the database:
+
     $ rake db:reset
-* Start the server
+
+Start the server
+
     $ rails s
 
 Now you should be able to log into your local version of UX Lab at the default Rails URL:
@@ -41,15 +44,24 @@ Now you should be able to log into your local version of UX Lab at the default R
 
 The easiest way to get started with UX Lab is to fork the repository and host it on [Heroku](http://heroku.com/).
 
-* Install the heroku gem
+Install the heroku gem
+
     $ gem install heroku
-* Create a heroku app
+
+Create a heroku app
+
     $ heroku create
-* Create a user locally (either by modifying seeds.rb or using the console)
-* Push your app to Heroku
+
+Create a user locally (either by modifying seeds.rb or using the console)
+
+Push your app to Heroku
+
     $ git push heroku master
-* Install the 'taps' gem (for managing Heroku's database)
-* Push your local database to Heroku
+
+Install the 'taps' gem (for managing Heroku's database)
+
+Push your local database to Heroku
+
     $ heroku db:push
 
 Soon, there will be a cleaner way to create initial users and change passwords, but for now you will have to manage your initial users locally before pushing your local database to Heroku.
