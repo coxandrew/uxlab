@@ -27,6 +27,10 @@ Set up the database:
 
     $ rake db:reset
 
+Copy the `s3.yml` config file and change the Amazon S3 credentials to match your access key ID and secret access key:
+
+    $ cp config/s3.yml.example config.s3.yml
+
 Start the server
 
     $ rails s
@@ -44,23 +48,29 @@ Now you should be able to log into your local version of UX Lab at the default R
 
 The easiest way to get started with UX Lab is to fork the repository and host it on [Heroku](http://heroku.com/).
 
-Install the heroku gem
+Create a user locally (either by modifying seeds.rb or using the console), for example:
+
+    $ rails c
+    ruby-1.9.2-p136 > User.destroy_all
+    ruby-1.9.2-p136 > User.create(:username => "tronguy", :password => "tronguy", :password_confirmation => "tronguy")
+
+Install the heroku gem:
 
     $ gem install heroku
 
-Create a heroku app
+Install the [taps](http://docs.heroku.com/taps) gem (for database management):
+
+    $ gem install taps
+
+Create a heroku app:
 
     $ heroku create
 
-Create a user locally (either by modifying seeds.rb or using the console)
-
-Push your app to Heroku
+Push your app to Heroku:
 
     $ git push heroku master
 
-Install the 'taps' gem (for managing Heroku's database)
-
-Push your local database to Heroku
+Push your local database to Heroku:
 
     $ heroku db:push
 
