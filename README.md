@@ -27,7 +27,7 @@ Set up the database:
 
     $ rake db:reset
 
-Copy the `s3.yml` config file and change the Amazon S3 credentials to match your access key ID and secret access key:
+Copy the `s3.yml` config file and change the [Amazon S3 credentials](http://docs.heroku.com/s3) to match your access key ID and secret access key:
 
     $ cp config/s3.yml.example config.s3.yml
 
