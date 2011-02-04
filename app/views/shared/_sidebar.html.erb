@@ -1,8 +1,8 @@
-<% if @features %>
+<% if @project && !@project.new_record? %>
 <div id="sidebar">
   <h3>Features</h3>
 
-  <% if @features.any? %>
+  <% if @features.present? %>
     <ul id="sidebar_links">
       <%= render @features, :as => "feature_link" %>
     </ul>
