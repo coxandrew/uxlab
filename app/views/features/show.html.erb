@@ -18,6 +18,10 @@
   <ul class="flows">
     <%= render @feature.flows %>
   </ul>
+<% else %>
+  <p>
+    You do not have any user flows yet.
+  </p>
 <% end %>
 
 <% if can? :edit, @feature %>

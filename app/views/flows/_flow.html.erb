@@ -1,3 +1,11 @@
 <li>
-  <%= link_to flow.name, [flow.feature.project, flow.feature, flow] %>
+  <%= flow.name %>
+  <div class="screens clearfix">
+    <%= render flow.screens %>
+    <div class="screen_frame">
+      <%= link_to "Add screen",
+        new_project_feature_flow_screen_path(@project, @feature, flow),
+        :class => "add_screen" %>
+    </div>
+  </div>
 </li>

@@ -1,6 +1,7 @@
 /* =colors
    --------------------------------------------------------------- **
 ** #003366 - link color
+** #888888 - control link colors
 ** --------------------------------------------------------------- */
 
 /* =toc
@@ -235,6 +236,7 @@ a.inline_edit:hover {
   color: #036;
 }
 .actions {
+  clear: both;
   margin-top: 1em;
 }
 #error_explanation {
@@ -255,12 +257,13 @@ a.inline_edit:hover {
   font-weight: bold;
   color: #c00;
 }
-textarea.description {
+textarea.description,
+textarea.caption {
   height: 100px;
-  width: 500px;
+  width: 400px;
 }
 input.name {
-  width: 500px;
+  width: 400px;
 }
 
 /* =login
@@ -371,18 +374,29 @@ ul#project_tabs li a.current:active {
 
 /* =screens
 ------------------------------------------------------------------ */
-#main ul.screens {
-  list-style-type: none;
-  margin-left: 0;
-}
-ul.screens li {
+.screen_frame {
   float: left;
-}
-ul.screens li img {
   padding: 3px;
   background: #fff;
   border: 1px solid #ccc;
   margin: 5px;
+}
+.screen_frame a:link,
+.screen_frame a:visited,
+.screen_frame a:hover,
+.screen_frame a:active {
+  font-size: 90%;
+  color: #888888;
+}
+a.add_screen:link,
+a.add_screen:visited,
+a.add_screen:hover,
+a.add_screen:active {
+  display: block;
+  height: 100px;
+  width: 100px;
+  line-height: 100px;
+  text-align: center;
 }
 img.screen {
   max-width: 710px;

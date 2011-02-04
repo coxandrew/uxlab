@@ -19,7 +19,7 @@ class ScreensController < ApplicationController
     @screen = Screen.new(params[:screen])
 
     if @screen.save
-      redirect_to([@project, @feature, @screen.flow],
+      redirect_to([@project, @feature],
         :notice => 'Screen was successfully created.')
     else
       render :action => "new"
@@ -31,6 +31,7 @@ class ScreensController < ApplicationController
     flow = @screen.flow
     @screen.destroy
 
-    redirect_to([@project, @feature, flow])
+    redirect_to([@project, @feature],
+      :notice => "Screen was successfully deleted.")
   end
 end

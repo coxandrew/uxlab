@@ -16,9 +16,7 @@
 </p>
 
 <% if @flow.screens.any? %>
-  <ul class="screens clearfix">
-    <%= render @flow.screens %>
-  </ul>
+  <%= render @flow.screens %>
 <% else %>
   <p>
     There are no screens for this user flow yet.
